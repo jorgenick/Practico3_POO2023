@@ -16,7 +16,10 @@ public class Automovil {
 	// Manager man = new Manager();
 	
 	
-	public Automovil(String dominio, char marca, char tipo, int modelo, int kilometraje, float precioValuado,
+	
+	
+	public Automovil(String dominio, char marca, char tipo, int modelo,
+			int kilometraje, float precioValuado,
 			 char estado) {
 		super();
 		this.dominio = dominio;
@@ -27,6 +30,10 @@ public class Automovil {
 		this.precioValuado = precioValuado;
 		this.precioVenta = calcularPorcentaje(precioValuado);
 		this.estado = estado;
+	}
+
+	public Automovil() {
+		super();
 	}
 
 	public String getDominio() {
@@ -93,8 +100,8 @@ public class Automovil {
 		this.estado = estado;
 	}
 	
-	public float calcularPorcentaje(float precioVenta) {
-		return precioVenta*1.1f;
+	public float calcularPorcentaje(float precio) {
+		return precio*1.1f;
 	}
 
 	@Override
