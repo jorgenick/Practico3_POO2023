@@ -4,10 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ar.edu.unju.fi.dominio.Automovil;
+import ar.edu.unju.fi.manager.Manager;
 
 public class Principal {
 
 	public static void main(String[] args) {
+		
+		Manager manajer = new Manager();
+		
+		manajer.cargarAutomoviles();
 		
 		List <Automovil> listaAutos = new ArrayList<>();
 		
@@ -18,9 +23,5 @@ public class Principal {
 		for (Automovil automovil : listaAutos) {
 			System.out.println(automovil);
 		}
-		
-		
-
 	}
-
 }
