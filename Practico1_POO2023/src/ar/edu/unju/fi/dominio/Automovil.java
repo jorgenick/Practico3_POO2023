@@ -11,16 +11,12 @@ public class Automovil {
 	private int kilometraje;
 	private float precioValuado;
 	private float precioVenta;
-	private char estado= 'd';
+	private char estado= 'D';
 	
 	// Manager man = new Manager();
 	
-	
-	
-	
-	public Automovil(String dominio, char marca, char tipo, int modelo,
-			int kilometraje, float precioValuado,
-			 char estado) {
+
+	public Automovil(String dominio, char marca, char tipo, int modelo, int kilometraje, float precioValuado) {
 		super();
 		this.dominio = dominio;
 		this.marca = marca;
@@ -111,8 +107,4 @@ public class Automovil {
 				+ ", estado=" + estado + "]";
 	}
 	
-	
-	
-	
-
 }
