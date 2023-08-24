@@ -40,12 +40,10 @@ public class Manager {
 	}
 	
 	public void mostrarAutos() {
-		
+		cargarAutomoviles();
 		for (Automovil automovil : listaAutos) {
-			
+			System.out.println(automovil);
 		}
-		
-		
 	}
 	
 	public float calcularPorcentaje2(float precioVenta) {
