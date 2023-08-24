@@ -48,6 +48,8 @@ public class Principal {
 		Integer numeroal = manager2.generarNumeroAleatorio();
 		
 		System.out.println("numero aleatoreo generado: "+numeroal);
+		
+		manager2.cargarNumerosAleatoreos();
 
 	}
 }
