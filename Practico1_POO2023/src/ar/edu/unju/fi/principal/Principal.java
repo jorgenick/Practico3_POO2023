@@ -1,5 +1,7 @@
 package ar.edu.unju.fi.principal;
 
+import java.util.Scanner;
+
 import ar.edu.unju.fi.manager.ManagerP2;
 
 public class Principal {
@@ -44,12 +46,12 @@ public class Principal {
 // <<<<<<<<<<<<<<pruebaTP>>>>>>>>>>>>>>>>>>>>>>
 
 		ManagerP2 manager2 = new ManagerP2();
-		
 		Integer numeroal = manager2.generarNumeroAleatorio();
-		
 		System.out.println("numero aleatoreo generado: "+numeroal);
-		
 		manager2.cargarNumerosAleatoreos();
+		
+		Scanner scanner = new Scanner(System.in);
+		int ingreso = scanne
 
 	}
 }
