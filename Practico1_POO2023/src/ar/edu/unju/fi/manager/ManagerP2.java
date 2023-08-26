@@ -30,11 +30,13 @@ public class ManagerP2 {
 // 		declaracion de variables
 		boolean primerNum = false;
 		int cantidadValores = 10;
+		int topedeNumeros = cantidadValores;
+		
 // se crear una estructura de control while
 		while (cantidadValores > 0) {
 //	instanciacion de random para usar metodo aleatorio
 			Random random = new Random();
-			int alea = random.nextInt(10) + 1;
+			int alea = random.nextInt(topedeNumeros) + 1;
 // declaracion de variable booleana
 			boolean esAleatorio = false;
 // primer valor queda agregado a la lista

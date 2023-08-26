@@ -51,7 +51,10 @@ public class Principal {
 		manager2.cargarNumerosAleatoreos();
 		
 		Scanner scanner = new Scanner(System.in);
-		int ingreso = scanne
+		System.out.println("ingrese valor entero : ");
+		int ingreso = scanner.nextInt();
+		System.out.println("el valor ingresado es: "+ingreso);
+		
 
 	}
 }
