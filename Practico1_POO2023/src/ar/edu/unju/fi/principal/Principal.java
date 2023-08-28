@@ -50,7 +50,11 @@ public class Principal {
 //		manager2.modificarMayor();
 //		manager2.mayoresFac();
 		
-		manager2.substrings("123");
+	//	manager2.substrings("123");
+		
+		System.out.println("resultado = "+manager2.sumAllSubstrings("1234"));
+		
+		
 
 		
 	}

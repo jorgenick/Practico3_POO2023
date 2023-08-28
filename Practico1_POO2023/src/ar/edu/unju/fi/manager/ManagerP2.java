@@ -133,25 +133,20 @@ public class ManagerP2 {
 			
 	//	cadenaNumero = Integer.parseInt(n);	
 		
-		int sumatoria = 0;
+		int sumatoria = Integer.parseInt(n);
 		
 		switch (n.length()){
 		case 1: 
-			sumatoria = Integer.parseInt(n);	
 			System.out.println(sumatoria);
 			break;
 		case 2: 
-			sumatoria = Integer.parseInt(n);	
 			System.out.println(sumatoria);
-			
 			for (int i = 0; i < n.length(); i++) 
 				sumatoria = sumatoria +(n.charAt(i)- '0');
 			break;
 		
 		case 3: 
-			sumatoria = Integer.parseInt(n);	
 			System.out.println(sumatoria);
-			
 			for (int i = 0; i < n.length(); i++) 
 				sumatoria = sumatoria +(n.charAt(i)- '0');
 			
@@ -161,9 +156,7 @@ public class ManagerP2 {
 			break;
 			
 		case 4: 
-			sumatoria = Integer.parseInt(n);	
 			System.out.println(sumatoria);
-			
 			for (int i = 0; i < n.length(); i++) 
 				sumatoria = sumatoria +(n.charAt(i)- '0');
 			
@@ -186,5 +179,27 @@ public class ManagerP2 {
 		
 		return 0;
 		}
-}
+	
+
+
+	    public static int sumAllSubstrings(String numberStr) {
+	        int sum = 0;
+	        int n = numberStr.length();
+
+	        for (int i = 0; i < n; i++) {
+	        	System.out.println("sumatoria I: "+sum);
+	            int num = 0;
+	            for (int j = i; j < n; j++) {
+	                num = num * 10 + (numberStr.charAt(j) - '0');
+	                sum += num;
+	                System.out.println("sumatoria J: "+sum);
+	            }
+	        }
+
+	        return sum;
+	    }
+	}
+
+	
+
 
