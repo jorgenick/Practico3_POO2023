@@ -44,17 +44,14 @@ public class Principal {
 //  manager.mostrarAutos();
 		
 // <<<<<<<<<<<<<<pruebaTP>>>>>>>>>>>>>>>>>>>>>>
-
 		ManagerP2 manager2 = new ManagerP2();
-		Integer numeroal = manager2.generarNumeroAleatorio();
-		System.out.println("numero aleatoreo generado: "+numeroal);
-		manager2.cargarNumerosAleatoreos();
+//		manager2.cargarNumerosAleatoreos(12);
+//		 manager2.eliminarMultiplos();
+//		manager2.modificarMayor();
+//		manager2.mayoresFac();
 		
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("ingrese valor entero : ");
-		int ingreso = scanner.nextInt();
-		System.out.println("el valor ingresado es: "+ingreso);
-		
+		manager2.substrings("123");
 
+		
 	}
 }
