@@ -52,7 +52,14 @@ public class Principal {
 		
 	//	manager2.substrings("123");
 		
-		System.out.println("resultado = "+manager2.sumAllSubstrings("1234"));
+		System.out.println("resultado = "+manager2.substring("123445613"));
+		
+//		String palabra ="hola";
+//		
+//		int indicador = 0;
+//		indicador = palabra.indexOf(2);
+//		
+//		System.out.println("indicador de salida "+palabra.indexOf("ho"));
 		
 		
 

@@ -179,25 +179,32 @@ public class ManagerP2 {
 		
 		return 0;
 		}
-	
 
-
-	    public static int sumAllSubstrings(String numberStr) {
-	        int sum = 0;
-	        int n = numberStr.length();
-
-	        for (int i = 0; i < n; i++) {
-	        	System.out.println("sumatoria I: "+sum);
-	            int num = 0;
-	            for (int j = i; j < n; j++) {
-	                num = num * 10 + (numberStr.charAt(j) - '0');
-	                sum += num;
-	                System.out.println("sumatoria J: "+sum);
-	            }
-	        }
-
-	        return sum;
-	    }
+		public static int substring(String n) {
+			int conv = Integer.parseInt(n);
+			if (conv < 1 || conv > 200000) {
+				System.out.println("numero ingresado no valido");
+				return 0;
+			} else {
+				if (n.charAt(0) == '0') {
+					System.out.println("el numero ingresado no debe tener ceros a la izquierda");
+					return 0;
+				} else {
+					int acumulador = 0;
+					int longitud = n.length();
+					for (int i = 0; i < longitud; i++) {
+						System.out.println("sumatoria I: " + acumulador);
+						int num = 0;
+						for (int j = i; j < longitud; j++) {
+							num = num * 10 + (n.charAt(j) - '0');
+							acumulador = acumulador + num;
+							System.out.println("sumatoria J: " + acumulador);
+						}
+					}
+					return acumulador;
+				}
+			}
+		}
 	}
 
 	
