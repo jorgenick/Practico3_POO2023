@@ -205,6 +205,31 @@ public class ManagerP2 {
 				}
 			}
 		}
+		
+		
+		public static void mostrarNumero(long nu) {
+			System.out.println("NUMERO INGRESADO: "+nu);
+		}
+		
+		 private static final int MOD = 1000000007;
+
+		    public static long sumSubstrings(String input) {
+		        int n = input.length();
+		        long[] dp = new long[n];
+		        dp[0] = input.charAt(0) - '0';
+		        long totalSum = dp[0];
+
+		        for (int i = 1; i < n; i++) {
+		            int digit = input.charAt(i) - '0';
+		            dp[i] = (i + 1) * digit + 10 * dp[i - 1] % MOD;
+		            dp[i] %= MOD;
+		            totalSum += dp[i];
+		            totalSum %= MOD;
+		        }
+
+		        return totalSum;
+		    }
+		
 	}
 
 	
