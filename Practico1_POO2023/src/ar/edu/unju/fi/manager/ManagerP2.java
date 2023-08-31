@@ -180,31 +180,31 @@ public class ManagerP2 {
 		return 0;
 		}
 
-		public static int substring(String n) {
-			int conv = Integer.parseInt(n);
-			if (conv < 1 || conv > 200000) {
-				System.out.println("numero ingresado no valido");
-				return 0;
-			} else {
-				if (n.charAt(0) == '0') {
-					System.out.println("el numero ingresado no debe tener ceros a la izquierda");
-					return 0;
-				} else {
-					int acumulador = 0;
-					int longitud = n.length();
-					for (int i = 0; i < longitud; i++) {
-						System.out.println("sumatoria I: " + acumulador);
-						int num = 0;
-						for (int j = i; j < longitud; j++) {
-							num = num * 10 + (n.charAt(j) - '0');
-							acumulador = acumulador + num;
-							System.out.println("sumatoria J: " + acumulador);
-						}
-					}
-					return acumulador;
-				}
-			}
-		}
+//		public static int substring(String n) {
+//			int conv = Integer.parseInt(n);
+//			if (conv < 1 || conv > 200000) {
+//				System.out.println("numero ingresado no valido");
+//				return 0;
+//			} else {
+//				if (n.charAt(0) == '0') {
+//					System.out.println("el numero ingresado no debe tener ceros a la izquierda");
+//					return 0;
+//				} else {
+//					int acumulador = 0;
+//					int longitud = n.length();
+//					for (int i = 0; i < longitud; i++) {
+//						System.out.println("sumatoria I: " + acumulador);
+//						int num = 0;
+//						for (int j = i; j < longitud; j++) {
+//							num = num * 10 + (n.charAt(j) - '0');
+//							acumulador = acumulador + num;
+//							System.out.println("sumatoria J: " + acumulador);
+//						}
+//					}
+//					return acumulador;
+//				}
+//			}
+//		}
 		
 		
 		public static void mostrarNumero(long nu) {
@@ -214,30 +214,47 @@ public class ManagerP2 {
 		 private static final int MOD = 1000000007;
 
 		    public static long sumSubstrings(String input) {
-		    	// se crea una variable que determina la longitud de la cadena
 		        int n = input.length();
-		        System.out.println("largo de cadena: "+n);
-		        // se crea un vector vacio con una cantidad de posiciones igual a la long de la cadena
 		        long[] dp = new long[n];
-		        // a la pos 0 del vector creado se le asigna el primer numero de la cadena
 		        dp[0] = input.charAt(0) - '0';
-		        // se crea una variable acumulador que se le asigna el valor de la pos 0 extraido de la cadena 
 		        long totalSum = dp[0];
 
 		        for (int i = 1; i < n; i++) {
 		            int digit = input.charAt(i) - '0';
 		            dp[i] = (i + 1) * digit + 10 * dp[i - 1] % MOD;
-		            System.out.println("dp"+dp[i]);
-//		            dp[i] %= MOD;
-//		            System.out.println("dp"+dp[i]);
+		            dp[i] %= MOD;
 		            totalSum += dp[i];
-		            System.out.println("total suma1 ="+totalSum);
 		            totalSum %= MOD;
-		            System.out.println("total suma2 ="+totalSum);
 		        }
 
 		        return totalSum;
 		    }
+		    
+			public static long substring(String n) {
+//				int conv = Integer.parseInt(n);
+//				if (conv < 1 || conv > 200000) {
+//					System.out.println("numero ingresado no valido");
+//					return 0;
+//				} else {
+					if (n.charAt(0) == '0') {
+						System.out.println("el numero ingresado no debe tener ceros a la izquierda");
+						return 0;
+					} else {
+						long acumulador = 0;
+						int longitud = n.length();
+						for (int i = 0; i < longitud; i++) {
+							// System.out.println("sumatoria I: " + acumulador);
+							long num = 0;
+							for (int j = i; j < longitud; j++) {
+								num = num * 10 % MOD + (n.charAt(j) - '0')% MOD;
+								acumulador = (acumulador + num)% MOD;
+								// System.out.println("sumatoria J: " + acumulador);
+							}
+						}
+						return acumulador;
+					}
+				}
+//			}
 		
 	}
 
