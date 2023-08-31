@@ -214,17 +214,26 @@ public class ManagerP2 {
 		 private static final int MOD = 1000000007;
 
 		    public static long sumSubstrings(String input) {
+		    	// se crea una variable que determina la longitud de la cadena
 		        int n = input.length();
+		        System.out.println("largo de cadena: "+n);
+		        // se crea un vector vacio con una cantidad de posiciones igual a la long de la cadena
 		        long[] dp = new long[n];
+		        // a la pos 0 del vector creado se le asigna el primer numero de la cadena
 		        dp[0] = input.charAt(0) - '0';
+		        // se crea una variable acumulador que se le asigna el valor de la pos 0 extraido de la cadena 
 		        long totalSum = dp[0];
 
 		        for (int i = 1; i < n; i++) {
 		            int digit = input.charAt(i) - '0';
 		            dp[i] = (i + 1) * digit + 10 * dp[i - 1] % MOD;
-		            dp[i] %= MOD;
+		            System.out.println("dp"+dp[i]);
+//		            dp[i] %= MOD;
+//		            System.out.println("dp"+dp[i]);
 		            totalSum += dp[i];
+		            System.out.println("total suma1 ="+totalSum);
 		            totalSum %= MOD;
+		            System.out.println("total suma2 ="+totalSum);
 		        }
 
 		        return totalSum;
