@@ -6,12 +6,14 @@ import ar.edu.unju.fi.manager.Constante;
 
 public abstract class Empleado {
 	
-	private int id_Empleado = 1;
+	private int id_Empleado;
 	private int legajo;
 	private String nombre;
 	private int cant_hijos;
 	private Date fecha_Nac;
 	private int antiguedad;
+	
+	private static int next_Id = 1;
 	
 	public Empleado() {
 		super();
@@ -20,8 +22,8 @@ public abstract class Empleado {
 	public Empleado(int legajo, String nombre, int cant_hijos, Date fecha_Nac, int antiguedad) {
 		
 		super();
-		this.id_Empleado = id_Empleado;
-	     this.id_Empleado++;
+		this.id_Empleado = next_Id;
+		next_Id++;
 		this.legajo = legajo;
 		this.nombre = nombre;
 		this.cant_hijos = cant_hijos;
@@ -78,10 +80,7 @@ public abstract class Empleado {
 		this.antiguedad = antiguedad;
 	}
 	
-	public double getSueldoBasico() {
-		
-		return 150000d;
-	}
+	public abstract double getSueldoBasico();
 	
 	public abstract double getRenBonificable();
 	

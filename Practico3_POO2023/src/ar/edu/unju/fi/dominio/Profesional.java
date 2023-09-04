@@ -13,18 +13,17 @@ public class Profesional extends Empleado {
 		super(legajo, nombre, cant_hijos, fecha_Nac, antiguedad);
 		
 		this.cantTitulos = cantTitulos;
-		
 	}
 
-	public double getSueldoNetoProfesional() {
-		
+	@Override
+	public double getSueldoBasico() {
 		return getRenBonificable()+getSalarioFamiliar()-getDescuentos();
 	}
 	
 	@Override
 	public double getRenBonificable() {
 
-		return super.getSueldoBasico()+this.cantTitulos*Constante.ADICIONAL_POR_TITULO+getImporteAntiguedad();
+		return Constante.SUELDO_BASICO + this.cantTitulos * Constante.ADICIONAL_POR_TITULO + getImporteAntiguedad();
 	}
 
 	@Override
@@ -40,8 +39,10 @@ public class Profesional extends Empleado {
 
 	@Override
 	public double getImporteAntiguedad() {
-		return getAntiguedad()*Constante.ADICIONAL_POR_ANTIGUEDAD;
+		return getAntiguedad() * Constante.ADICIONAL_POR_ANTIGUEDAD;
 	}
+
+
 
 
 	
