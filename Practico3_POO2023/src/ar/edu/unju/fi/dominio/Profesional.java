@@ -9,16 +9,23 @@ public class Profesional extends Empleado {
 	
 	private int cantTitulos;
 
-	public Profesional(int legajo, String nombre, int cant_hijos, Date fecha_Nac, int antiguedad,int cantTitulos) {
+	public Profesional(int legajo, String nombre, int cant_hijos, String fecha_Nac, int antiguedad,int cantTitulos) {
 		super(legajo, nombre, cant_hijos, fecha_Nac, antiguedad);
 		
 		this.cantTitulos = cantTitulos;
 	}
 
 	@Override
-	public double getSueldoBasico() {
+	public double getSueldoNeto() {
 		return getRenBonificable()+getSalarioFamiliar()-getDescuentos();
 	}
+	
+	@Override
+	public double getRenBonificableIncremento() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
 	
 	@Override
 	public double getRenBonificable() {
@@ -41,6 +48,8 @@ public class Profesional extends Empleado {
 	public double getImporteAntiguedad() {
 		return getAntiguedad() * Constante.ADICIONAL_POR_ANTIGUEDAD;
 	}
+
+
 
 
 

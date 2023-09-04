@@ -8,5 +8,4 @@ public class Constante {
 	public static final double ADICIONAL_POR_TITULO = 80000d;
 	public static final double ADICIONAL_POR_ANTIGUEDAD = 7000d;
 	
-
 }

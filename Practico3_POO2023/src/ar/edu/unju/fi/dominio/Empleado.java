@@ -10,7 +10,7 @@ public abstract class Empleado {
 	private int legajo;
 	private String nombre;
 	private int cant_hijos;
-	private Date fecha_Nac;
+	private String fecha_Nac;
 	private int antiguedad;
 	
 	private static int next_Id = 1;
@@ -19,7 +19,7 @@ public abstract class Empleado {
 		super();
 	}
 
-	public Empleado(int legajo, String nombre, int cant_hijos, Date fecha_Nac, int antiguedad) {
+	public Empleado(int legajo, String nombre, int cant_hijos, String fecha_Nac, int antiguedad) {
 		
 		super();
 		this.id_Empleado = next_Id;
@@ -64,11 +64,11 @@ public abstract class Empleado {
 		this.cant_hijos = cant_hijos;
 	}
 
-	public Date getFecha_Nac() {
+	public String getFecha_Nac() {
 		return fecha_Nac;
 	}
 
-	public void setFecha_Nac(Date fecha_Nac) {
+	public void setFecha_Nac(String fecha_Nac) {
 		this.fecha_Nac = fecha_Nac;
 	}
 
@@ -80,7 +80,9 @@ public abstract class Empleado {
 		this.antiguedad = antiguedad;
 	}
 	
-	public abstract double getSueldoBasico();
+	public abstract double getSueldoNeto();
+
+	public abstract double getRenBonificableIncremento();
 	
 	public abstract double getRenBonificable();
 	

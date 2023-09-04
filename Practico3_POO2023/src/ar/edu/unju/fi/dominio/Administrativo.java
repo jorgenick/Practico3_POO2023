@@ -1,13 +1,21 @@
 package ar.edu.unju.fi.dominio;
 
+import java.util.Date;
+
 import ar.edu.unju.fi.manager.Constante;
 
 public class Administrativo extends Empleado {
 	
 	private int categoria;
+	
+	public Administrativo(int legajo, String nombre, int cant_hijos, String fecha_Nac, int antiguedad, int categoria) {
+		super(legajo, nombre, cant_hijos, fecha_Nac, antiguedad);
+		
+		this.categoria = categoria;
+	}
 
 	@Override
-	public double getSueldoBasico() {
+	public double getSueldoNeto() {
 		return getRenBonificable()+getSalarioFamiliar()-getDescuentos();
 	}
 
@@ -15,6 +23,13 @@ public class Administrativo extends Empleado {
 	public double getRenBonificable() {
 		return Constante.SUELDO_BASICO + getImporteAntiguedad()+getMontoCategoria(this.categoria);
 	}
+	
+	@Override
+	public double getRenBonificableIncremento() {
+		return Constante.SUELDO_BASICO * 1.1 + getImporteAntiguedad()+getMontoCategoria(this.categoria);
+	}
+	
+	
 	
 	public static double getMontoCategoria(int tipoCategoria) {
 		
