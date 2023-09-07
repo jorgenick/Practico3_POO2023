@@ -1,20 +1,21 @@
 package ar.edu.unju.fi.dominio;
 
-
-import java.util.Date;
-
 import ar.edu.unju.fi.manager.Constante;
 
+//la clase profesional hereda los atributos y metodos de la clase Empleado
 public class Profesional extends Empleado {
-	
+	// declaracion de atributos propios de la clase Profesional
 	private int cantTitulos;
 
+	// constructor
 	public Profesional(int legajo, String nombre, int cant_hijos, String fecha_Nac, int antiguedad,int cantTitulos) {
 		super(legajo, nombre, cant_hijos, fecha_Nac, antiguedad);
 		
 		this.cantTitulos = cantTitulos;
 	}
 
+	// se sobrescriben los metodos
+	
 	@Override
 	public double getSueldoNeto() {
 		return getRenBonificable()+getSalarioFamiliar()-getDescuentos();
@@ -22,10 +23,9 @@ public class Profesional extends Empleado {
 	
 	@Override
 	public double getRenBonificableIncremento() {
-		// TODO Auto-generated method stub
-		return 0;
+		return Constante.SUELDO_BASICO * 1.1 + this.cantTitulos * Constante.ADICIONAL_POR_TITULO + getImporteAntiguedad() +getSalarioFamiliar()-getDescuentos();
+
 	}
-	
 	
 	@Override
 	public double getRenBonificable() {
@@ -48,13 +48,4 @@ public class Profesional extends Empleado {
 	public double getImporteAntiguedad() {
 		return getAntiguedad() * Constante.ADICIONAL_POR_ANTIGUEDAD;
 	}
-
-
-
-
-
-
-	
-
-
 }

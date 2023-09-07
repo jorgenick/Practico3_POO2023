@@ -4,35 +4,34 @@ import ar.edu.unju.fi.manager.Manager;
 
 public class Principal {
 
+	/**
+	 * PARA PROBAR METODOS QUITAR LOS COMENTARIOS DE LOS METODOS
+	 * 
+	 */
 	public static void main(String[] args) {
 
-//		Empleado empleado1 = new Profesional(1000,"jorge",3,new Date(),5,2);
-//		Empleado empleado2 = new Profesional(2000,"jorge",5,new Date(),3,2);
-//		Empleado empleado3 = new Profesional(2000,"jorge",5,new Date(),3,2);
-//		
-//		Empleado empleado4 = new Administrativo(2000,"jorge",2,new Date(),10,2);
-//	//	Empleado empleado2 = new Profesional();
-//
-//		List<Empleado> listaEmpleados = new ArrayList<>();
-//
-//		listaEmpleados.add(empleado1);
-//		listaEmpleados.add(empleado2);
-//		listaEmpleados.add(empleado3);
-//		listaEmpleados.add(empleado4);
-//		
-//		for (Empleado empleado : listaEmpleados) {
-//			System.out.println(empleado);
-//		}
-//		
-//		System.out.println("SUELDO NETO PROFESIONAL 1 : $ "+empleado4.getRenBonificable());
-//		System.out.println("SUELDO NETO PROFESIONAL 1 : $ "+empleado4.getSalarioFamiliar());
-//		System.out.println("SUELDO NETO PROFESIONAL 1 : $ "+empleado4.getDescuentos());
-//		
-//		System.out.println("SUELDO NETO PROFESIONAL 1 : $ "+empleado4.getSueldoBasico());
-		
 		Manager manager = new Manager();
-		
-		manager.mostrarEmpleadosEdad();
+
+//	System.out.println("PUNTO 2");
+//
+//	manager.cargarEmpleados();
+//	manager.mostrarEmpleados();
+
+//	System.out.println("PUNTO 3");
+//	
+//	manager.mostrarEmpleadosAntiguedad(5);
+
+//	System.out.println("PUNTO 4");
+//	
+//	manager.mostrarEmpleadosEdad();
+
+//	System.out.println("PUNTO 5");
+//	
+//	manager.mostrarEmpleadosEdadNeto();
+
+//	System.out.println("PUNTO 6");
+//	
+//	manager.incremetarSueldoBasico();
 
 	}
 }

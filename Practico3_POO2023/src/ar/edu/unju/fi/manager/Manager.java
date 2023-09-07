@@ -17,26 +17,30 @@ public class Manager {
 	
 	public static void cargarEmpleados() {
 		
-		Empleado empleado1 = new Profesional(1000,"pedro",3,"2000-06-17",5,2);
-		Empleado empleado2 = new Profesional(2000,"jorge",5,"1993-06-17",3,2);
-		Empleado empleado3 = new Profesional(2000,"karen",5,"1993-06-17",3,2);
-		Empleado empleado4 = new Administrativo(2000,"juan",5,"1994-06-17",3,4);
+		Empleado empleado1 = new Profesional(111,"pedro",3,"2000-06-17",5,2);
+		Empleado empleado2 = new Profesional(222,"jorge",5,"1993-06-17",3,2);
+		Empleado empleado3 = new Profesional(333,"karen",5,"1993-06-17",10,2);
+		Empleado empleado4 = new Administrativo(444,"juan",5,"1994-06-17",7,4);
+		Empleado empleado5 = new Administrativo(555,"hector",5,"2000-02-10",11,2);
+		Empleado empleado6 = new Administrativo(666,"luis",5,"1963-08-11",15,3);
 
 		listaEmpleados.add(empleado1);
 		listaEmpleados.add(empleado2);
 		listaEmpleados.add(empleado3);
 		listaEmpleados.add(empleado4);
-		
+		listaEmpleados.add(empleado5);
+		listaEmpleados.add(empleado6);
 	}
 	
-	public static void mostrarEmpleados( List<Empleado> listaEmpleados) {
-		
+	public static void mostrarEmpleados() {
+		cargarEmpleados();
 		for (Empleado empleado : listaEmpleados) {
 			System.out.println(empleado);
 		}
 	}
 	
-	public static void mostrarEmpleadosAntiguedad (int anti , List<Empleado> listaEmpleados) {
+	public static void mostrarEmpleadosAntiguedad (int anti ) {
+		cargarEmpleados();
 		double acumuladorRenBonificable=0;
 		double acumuladorSalarioFam=0;
 		double acumuladorDescuentos=0;
@@ -57,15 +61,11 @@ public class Manager {
 		System.out.println("acumuladorDescuentos : "+acumuladorDescuentos);
 	}
 	
-	
 	public static void mostrarEmpleadosEdad() {
-		
 		cargarEmpleados();
-		
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("ingrese edad limite");
 		int edadLimite = scanner.nextInt();
-		
 		
 		for (Empleado empleado : listaEmpleados) {
 			if (calcularEdad(empleado.getFecha_Nac()) >= edadLimite) {
@@ -75,7 +75,6 @@ public class Manager {
 	}
 	
 	public static void mostrarEmpleadosEdadNeto() {
-		
 		cargarEmpleados();
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("ingrese edad limite");
@@ -91,7 +90,6 @@ public class Manager {
 	
 	
 	public static int calcularEdad (String fecha_de_nacimiento) {
-
 		   LocalDate fechaNac = LocalDate.parse(fecha_de_nacimiento) ;
 		   LocalDate fechaHoy = LocalDate.now();
 		   Period edad = Period.between(fechaNac, fechaHoy);
@@ -101,12 +99,12 @@ public class Manager {
 	}
 	
 	public static void incremetarSueldoBasico () {
-		
 		cargarEmpleados();
-		
 		for (Empleado empleado : listaEmpleados) {
-			if (empleado.getAntiguedad()<= 2) {
-				empleado.getRenBonificableIncremento();
+			if (empleado.getAntiguedad()<= 5) {
+				  System.out.println(empleado);
+				  System.out.println("SALARIO BASICO: "+empleado.getSueldoNeto());
+				  System.out.println("NUEVO SALARIO BASICO: "+empleado.getRenBonificableIncremento());
 			} 
 		}
 	}
