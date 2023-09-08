@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.poo.Practico4_POO2023;
+package ar.edu.unju.fi.practico4.Practico4_POO2023;
 
 import java.net.URL;
 

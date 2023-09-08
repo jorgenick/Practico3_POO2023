@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.poo.Practico4_POO2023.pages;
+package ar.edu.unju.fi.practico4.Practico4_POO2023.pages;
 
 import org.openqa.selenium.WebDriver;
 

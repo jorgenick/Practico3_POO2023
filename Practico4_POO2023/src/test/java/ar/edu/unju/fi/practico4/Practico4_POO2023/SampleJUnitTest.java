@@ -1,4 +1,4 @@
-package ar.edu.unju.fi.poo.Practico4_POO2023;
+package ar.edu.unju.fi.practico4.Practico4_POO2023;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test; 
@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Assertions;
 
 import org.openqa.selenium.support.PageFactory;
 
-import ar.edu.unju.fi.poo.Practico4_POO2023.pages.HomePage;
+import ar.edu.unju.fi.practico4.Practico4_POO2023.pages.HomePage;
 
 public class SampleJUnitTest extends JUnitTestBase {
 
